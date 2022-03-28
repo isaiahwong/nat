@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react';
 import './App.css';
 
 import Button from './components/Button/Button';
+import { XYPlot, XAxis, YAxis, HorizontalGridLines, LineSeries } from 'react-vis';
 
 class App extends Component {
 
@@ -66,6 +67,19 @@ class App extends Component {
                 <Button
                     onClick={this.getInvestment}
                 />
+                <XYPlot
+                    width={300}
+                    height={300}>
+                    <HorizontalGridLines />
+                    <LineSeries
+                        data={[
+                            { x: 1, y: 10 },
+                            { x: 2, y: 5 },
+                            { x: 3, y: 15 }
+                        ]} />
+                    <XAxis />
+                    <YAxis />
+                </XYPlot>
             </div>
         );
     }
